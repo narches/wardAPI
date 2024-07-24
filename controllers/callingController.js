@@ -32,7 +32,7 @@ const createCalling = async (req, res) => {
     try {
         const db = mongodb.getDatabase();
         const calling = {
-            Name: req.body.Name
+            Name: req.body.Name,
         };
 
         // Validate required fields
@@ -56,7 +56,7 @@ const updateCalling = async (req, res) => {
         const callingId = new ObjectId(req.params.id);
         const db = mongodb.getDatabase();
         const calling = {
-            Name: req.body.Name
+            Name: req.body.Name,
         };
 
         // Validate required fields
