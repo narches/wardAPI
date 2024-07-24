@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Ward API",
-    "description": "API for managing Asokoro Ward data",
-    "version": "1.0.0"
+    "title": "Menbers",
+    "version": "1.0.0",
+    "description": ""
   },
   "host": "ward-b32h.onrender.com",
-  "basePath": "/",
+  "basePath": "/routes/members.js",
   "schemes": [
     "http",
     "https"
@@ -29,6 +29,16 @@
       }
     },
     "/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api-docs": {
       "get": {
         "description": "",
         "responses": {
@@ -136,6 +146,208 @@
                   "example": "any"
                 },
                 "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "304": {
+            "description": "Not Modified"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/members/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "MRN": {
+                  "example": "any"
+                },
+                "Name": {
+                  "example": "any"
+                },
+                "Birth_Date": {
+                  "example": "any"
+                },
+                "Mission": {
+                  "example": "any"
+                },
+                "Status": {
+                  "example": "any"
+                },
+                "Address": {
+                  "example": "any"
+                },
+                "Phone": {
+                  "example": "any"
+                },
+                "Email": {
+                  "example": "any"
+                },
+                "Calling": {
+                  "example": "any"
+                },
+                "Organization": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/members/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "MRN": {
+                  "example": "any"
+                },
+                "Name": {
+                  "example": "any"
+                },
+                "Birth_Date": {
+                  "example": "any"
+                },
+                "Mission": {
+                  "example": "any"
+                },
+                "Status": {
+                  "example": "any"
+                },
+                "Address": {
+                  "example": "any"
+                },
+                "Phone": {
+                  "example": "any"
+                },
+                "Email": {
+                  "example": "any"
+                },
+                "Calling": {
+                  "example": "any"
+                },
+                "Organization": {
                   "example": "any"
                 }
               }

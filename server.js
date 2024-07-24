@@ -3,6 +3,7 @@ const mongodb = require('./database/wardDB'); // Ensure this is the correct path
 const bodyParser = require('body-parser');
 const env = require("dotenv").config();
 const userController = require('./controllers/userController');
+const memberController = require('./controllers/memberController');
 const swaggerAutogen = require('swagger-autogen')();
 const cors = require('cors');
 const router = require('express').Router();
@@ -74,7 +75,7 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
-app.get('/api-docs', (req, res) => {
+app.get('/', (req, res) => {
   res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}` : "Logged Out");
 });
 

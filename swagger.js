@@ -6,7 +6,7 @@ const swaggerDocument = require('./swagger.json');
 
 
 const doc = {
-    swagger: '2.0',
+    swagger: '3.0.3',
     info: {
         title: 'Ward API',
         description: 'API for managing Asokoro Ward data',
@@ -22,8 +22,21 @@ const doc = {
         }
     },
 
-    paths: {}
+    info: {
+        title: 'Users'
+    },
+    basePath: '/routes/users.js',
+
+    info: {
+        title: 'Menbers'
+    },
+    basePath: '/routes/members.js',
 };
+
+
+
+
+
 
 const outputFile = './swagger.json';
 const endpointsFiles = ['./routes/index.js'];
