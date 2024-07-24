@@ -7,18 +7,18 @@ const {isAuthenticated} = require("../middleware/authenticate");
 
 
 
-router.get('/', memberController.getAll);
+router.get('/', callingController.getAll);
 
 
-router.get('/:id', memberController.getSingle);
+router.get('/:id', callingController.getSingle);
 
 
-router.post('/', validation.saveCalling, isAuthenticated, memberController.createCalling);
+router.post('/', validation.saveCalling, isAuthenticated, callingController.createCalling);
 
 
-router.put('/:id', validation.saveCalling, isAuthenticated, memberController.updateCalling);
+router.put('/:id', validation.saveCalling, isAuthenticated, callingController.updateCalling);
 
 
-router.delete('/:id', isAuthenticated, memberController.deleteCalling);
+router.delete('/:id', isAuthenticated, callingController.deleteCalling);
 
 module.exports = router;
