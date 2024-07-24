@@ -1,12 +1,12 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Menbers",
-    "version": "1.0.0",
-    "description": ""
+    "title": "Ward API",
+    "description": "API for managing Asokoro Ward data",
+    "version": "1.0.0"
   },
   "host": "ward-b32h.onrender.com",
-  "basePath": "/routes/members.js",
+  "basePath": "/",
   "schemes": [
     "http",
     "https"
@@ -17,7 +17,7 @@
       "authorizationUrl": "https://ward-b32h.onrender.com/login"
     }
   },
-  "paths": {
+"paths": {
     "/login": {
       "get": {
         "description": "",
@@ -27,7 +27,7 @@
           }
         }
       }
-    },
+  },
     "/logout": {
       "get": {
         "description": "",
@@ -37,20 +37,10 @@
           }
         }
       }
-    },
-    "/api-docs": {
+},
+"/users/": {
       "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
-    "/users/": {
-      "get": {
-        "description": "",
+        "description": "New Jobs",
         "produces": [
           "application/json"
         ],
@@ -201,10 +191,10 @@
           }
         }
       }
-    },
-    "/members/": {
+},
+"/members/": {
       "get": {
-        "description": "",
+        "description": "New Stuffs",
         "produces": [
           "application/json"
         ],
@@ -232,9 +222,6 @@
                 "Name": {
                   "example": "any"
                 },
-                "Birth_Date": {
-                  "example": "any"
-                },
                 "Mission": {
                   "example": "any"
                 },
@@ -254,6 +241,9 @@
                   "example": "any"
                 },
                 "Organization": {
+                  "example": "any"
+                },
+                "Birth_Date": {
                   "example": "any"
                 }
               }
@@ -326,9 +316,6 @@
                 "Name": {
                   "example": "any"
                 },
-                "Birth_Date": {
-                  "example": "any"
-                },
                 "Mission": {
                   "example": "any"
                 },
@@ -348,6 +335,9 @@
                   "example": "any"
                 },
                 "Organization": {
+                  "example": "any"
+                },
+                "Birth_Date": {
                   "example": "any"
                 }
               }

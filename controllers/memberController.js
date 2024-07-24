@@ -34,14 +34,14 @@ const createMember = async (req, res) => {
         const member = {
             MRN: req.body.MRN,
             Name: req.body.Name,
-            Birth_Date: req.body.Birth_Date,
             Mission: req.body.Mission,
             Status: req.body.Status,
             Address: req.body.Address,
             Phone: req.body.Phone,
             Email: req.body.Email,
             Calling: req.body.Calling,
-            Organization: req.body.Organization
+            Organization: req.body.Organization,
+            Birth_Date: req.body.Birth_Date
         };
 
         // Validate required fields
@@ -67,14 +67,14 @@ const updateMember = async (req, res) => {
         const member = {
             MRN: req.body.MRN,
             Name: req.body.Name,
-            Birth_Date: req.body.Birth_Date,
             Mission: req.body.Mission,
             Status: req.body.Status,
             Address: req.body.Address,
             Phone: req.body.Phone,
             Email: req.body.Email,
             Calling: req.body.Calling,
-            Organization: req.body.Organization
+            Organization: req.body.Organization,
+            Birth_Date: req.body.Birth_Date
         };
 
         // Validate required fields
@@ -97,18 +97,24 @@ const updateMember = async (req, res) => {
     }
 };
 
+
 const deleteMember = async (req, res) => {
     try {
+        console.log(`Received request to delete user with ID: ${req.params.id}`);
         const memberId = new ObjectId(req.params.id);
         const db = mongodb.getDatabase();
+        
         const response = await db.collection('members').deleteOne({ _id: memberId });
+        console.log('Delete operation response:', response);
+
         if (response.deletedCount > 0) {
-            res.status(204).json({ error: 'Member deleted' });
+            res.status(200).json({ message: 'User deleted successfully' });
         } else {
-            res.status(404).json({ error: 'Member not found' });
+            res.status(404).json({ error: 'User not found' });
         }
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        console.error('Error during user deletion:', err); // Log the full error
+        res.status(500).json({ error: 'An error occurred while deleting the user' }); // Provide a generic error message
     }
 };
 
