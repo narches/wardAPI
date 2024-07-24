@@ -2,7 +2,7 @@ const express = require('express');
 const mongodb = require('./database/wardDB'); // Ensure this is the correct path to your MongoDB connection file
 const bodyParser = require('body-parser');
 const env = require("dotenv").config();
-const usersController = require('./controllers/userController');
+const userController = require('./controllers/userController');
 const swaggerAutogen = require('swagger-autogen')();
 const cors = require('cors');
 const router = require('express').Router();
@@ -74,7 +74,7 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
-app.get('/', (req, res) => {
+app.get('/api-docs', (req, res) => {
   res.send(req.session.user !== undefined ? `Logged in as ${req.session.user.displayName}` : "Logged Out");
 });
 
@@ -89,7 +89,7 @@ app.get('/github/callback', passport.authenticate('github', {
 
 
 const port = process.env.PORT || 10000;
-const host = process.env.HOST || '.onrender.com';
+const host = process.env.HOST || 'https://ward-b32h.onrender.com';
 
 mongodb.initDb((err) => {
   if (err) {

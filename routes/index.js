@@ -11,6 +11,8 @@ router.use('/', require('./swagger'));
 
 router.use('/users', require('./users'));
 
+router.use('/members', require('./members'));
+
 router.get('/login', passport.authenticate('github'), (req, res) => {});
 
 router.get('/logout', function(req, res, next) {

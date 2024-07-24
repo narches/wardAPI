@@ -9,29 +9,19 @@ const doc = {
     swagger: '2.0',
     info: {
         title: 'Ward API',
-        description: 'API for managing ward data',
+        description: 'API for managing Asokoro Ward data',
         version: '1.0.0'
     },
-    host: 'wardapi.onrender.com',
-    basePath: '/api',
+    host: 'ward-b32h.onrender.com',
+    basePath: '/',
     schemes: ['http', 'https'],
     securityDefinitions: {
         oauth2: {
             type: 'oauth2',
-            authorizationUrl: 'https://your-auth-server.com/oauth/authorize',
-            flow: 'implicit',
-            scopes: {
-                'openid': 'OpenID Connect scope',
-                'profile': 'Profile scope',
-                'email': 'Email scope'
-            }
+            authorizationUrl: 'https://ward-b32h.onrender.com/login',
         }
     },
-    security: [
-        {
-            oauth2: ['openid', 'profile', 'email']
-        }
-    ],
+
     paths: {}
 };
 

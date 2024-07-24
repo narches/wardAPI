@@ -32,16 +32,12 @@ const createUser = async (req, res) => {
     try {
         const db = mongodb.getDatabase();
         const user = {
-            user_id: req.body.user_id,
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
             email: req.body.email,
-            favoriteColor: req.body.favoriteColor,
-            birthday: req.body.birthday
+            password: req.body.password
         };
 
         // Validate required fields
-        if (!user.firstName || !user.lastName || !user.email) {
+        if (!user.email|| !user.password) {
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
@@ -61,16 +57,12 @@ const updateUser = async (req, res) => {
         const userId = new ObjectId(req.params.id);
         const db = mongodb.getDatabase();
         const user = {
-            user_id: req.body.user_id,
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
             email: req.body.email,
-            favoriteColor: req.body.favoriteColor,
-            birthday: req.body.birthday
+            password: req.body.password
         };
 
         // Validate required fields
-        if (!user.firstName || !user.lastName || !user.email) {
+        if (!user.email|| !user.password) {
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
