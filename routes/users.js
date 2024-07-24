@@ -11,10 +11,10 @@ router.get('/', userController.getAll);
 
 router.get('/:id', userController.getSingle);
 
-router.post('/', validation.saveUser, isAuthenticated, userController.createUser);
+router.post('/', validation.saveUser, userController.createUser);
 
-router.put('/:id', validation.saveUser, isAuthenticated, userController.updateUser);
+router.put('/:id', validation.saveUser, userController.updateUser);
 
-router.delete('/:id', isAuthenticated, userController.deleteUser);
+router.delete('/:id', userController.deleteUser);
 
 module.exports = router;
