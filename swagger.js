@@ -2,9 +2,6 @@ const swaggerAutogen = require('swagger-autogen')();
 const swaggerDocument = require('./swagger.json');
 
 
-
-
-
 const doc = {
     info: {
         title: 'Ward API',
@@ -20,6 +17,7 @@ const doc = {
             authorizationUrl: 'https://ward-b32h.onrender.com/login',
         }
     },
+    
   };
 
 
@@ -27,7 +25,7 @@ const doc = {
 
 
 
-const outputFile = ['./swagger.json'];
+const outputFile = './swagger.json';
 const endpointsFiles = ['./routes/index.js'];
 
 

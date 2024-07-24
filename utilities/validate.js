@@ -18,6 +18,41 @@ const saveUser = (req, res, next) => {
   });
 };
 
+const saveOrgs = (req, res, next) => {
+  const validationRule = {
+    Name: 'required|Name',
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
+
+const saveCalling = (req, res, next) => {
+  const validationRule = {
+    Name: 'required|Name',
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
 const saveMember = (req, res, next) => {
   const validationRule = {
     MRN: { type: String, required: true },
@@ -44,4 +79,4 @@ const saveMember = (req, res, next) => {
     }
   });
 };
-module.exports = {saveUser, saveMember};
+module.exports = {saveUser, saveCalling, saveOrgs, saveMember};

@@ -8,8 +8,9 @@ const swaggerAutogen = require('swagger-autogen')();
 const cors = require('cors');
 const router = require('express').Router();
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+//const swaggerDocument = require('./swagger.json');
 const passport = require('passport');
+const swaggerJSDoc = require('swagger-jsdoc');
 const session = require('express-session');
 const GitHubStrategy = require('passport-github2').Strategy;
 
