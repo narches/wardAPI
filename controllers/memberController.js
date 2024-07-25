@@ -2,6 +2,7 @@ const mongodb = require('../database/wardDB'); // Ensure this is the correct pat
 const { ObjectId } = require('mongodb');
 
 const getAll = async (req, res) => {
+     //#swagger.tags=['Members']
     try {
         const db = mongodb.getDatabase();
         const result = await db.collection('members').find().toArray();
@@ -13,6 +14,7 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+    //#swagger.tags=['Members']
     try {
         const memberId = new ObjectId(req.params.id);
         const db = mongodb.getDatabase();
@@ -29,6 +31,7 @@ const getSingle = async (req, res) => {
 };
 
 const createMember = async (req, res) => {
+    //#swagger.tags=['Members']
     try {
         const db = mongodb.getDatabase();
         const member = {
@@ -61,6 +64,7 @@ const createMember = async (req, res) => {
 };
 
 const updateMember = async (req, res) => {
+    //#swagger.tags=['Members']
     try {
         const memberId = new ObjectId(req.params.id);
         const db = mongodb.getDatabase();
@@ -99,6 +103,7 @@ const updateMember = async (req, res) => {
 
 
 const deleteMember = async (req, res) => {
+    //#swagger.tags=['Members']
     try {
         console.log(`Received request to delete user with ID: ${req.params.id}`);
         const memberId = new ObjectId(req.params.id);

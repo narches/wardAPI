@@ -20,6 +20,9 @@
   "paths": {
     "/login": {
       "get": {
+        "tags": [
+          "Login"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -30,6 +33,9 @@
     },
     "/logout": {
       "get": {
+        "tags": [
+          "Login"
+        ],
         "description": "",
         "responses": {
           "default": {
@@ -40,6 +46,9 @@
     },
     "/users/": {
       "get": {
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -54,6 +63,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -93,6 +105,9 @@
     },
     "/users/{id}": {
       "get": {
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -118,6 +133,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -167,6 +185,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -194,6 +215,9 @@
     },
     "/members/": {
       "get": {
+        "tags": [
+          "Members"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -208,6 +232,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Members"
+        ],
         "description": "",
         "parameters": [
           {
@@ -271,6 +298,9 @@
     },
     "/members/{id}": {
       "get": {
+        "tags": [
+          "Members"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -296,6 +326,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Members"
+        ],
         "description": "",
         "parameters": [
           {
@@ -369,6 +402,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Members"
+        ],
         "description": "",
         "parameters": [
           {
@@ -396,6 +432,9 @@
     },
     "/calling/": {
       "get": {
+        "tags": [
+          "Calling"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -410,6 +449,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Calling"
+        ],
         "description": "",
         "parameters": [
           {
@@ -446,6 +488,9 @@
     },
     "/calling/{id}": {
       "get": {
+        "tags": [
+          "Calling"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -471,6 +516,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Calling"
+        ],
         "description": "",
         "parameters": [
           {
@@ -517,6 +565,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Calling"
+        ],
         "description": "",
         "parameters": [
           {
@@ -544,6 +595,9 @@
     },
     "/organization/": {
       "get": {
+        "tags": [
+          "Organizations"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -558,6 +612,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Organizations"
+        ],
         "description": "",
         "parameters": [
           {
@@ -594,6 +651,9 @@
     },
     "/organization/{id}": {
       "get": {
+        "tags": [
+          "Organizations"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -619,6 +679,9 @@
         }
       },
       "put": {
+        "tags": [
+          "Organizations"
+        ],
         "description": "",
         "parameters": [
           {
@@ -665,6 +728,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Organizations"
+        ],
         "description": "",
         "parameters": [
           {

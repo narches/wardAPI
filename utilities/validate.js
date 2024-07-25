@@ -57,7 +57,6 @@ const saveMember = (req, res, next) => {
   const validationRule = {
     MRN: { type: String, required: true },
     Name: { type: String, required: true },
-    Birth_Date: { type: String, required: true },
     Mission: { type: String, required: true },
     Status: { type: String, required: true },
     Phone: { type: String, required: true },
@@ -66,6 +65,7 @@ const saveMember = (req, res, next) => {
     phone: { type: String, required: true },
     Calling: { type: String, required: true },
     Organization: { type: String, required: true },
+    Birth_Date: { type: String, required: true },
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {

@@ -2,6 +2,7 @@ const mongodb = require('../database/wardDB'); // Ensure this is the correct pat
 const { ObjectId } = require('mongodb');
 
 const getAll = async (req, res) => {
+    //#swagger.tags=['Calling']
     try {
         const db = mongodb.getDatabase();
         const result = await db.collection('calling').find().toArray();
@@ -13,6 +14,7 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+    //#swagger.tags=['Calling']
     try {
         const callingId = new ObjectId(req.params.id);
         const db = mongodb.getDatabase();
@@ -29,6 +31,7 @@ const getSingle = async (req, res) => {
 };
 
 const createCalling = async (req, res) => {
+    //#swagger.tags=['Calling']
     try {
         const db = mongodb.getDatabase();
         const calling = {
@@ -52,6 +55,7 @@ const createCalling = async (req, res) => {
 };
 
 const updateCalling = async (req, res) => {
+    //#swagger.tags=['Calling']
     try {
         const callingId = new ObjectId(req.params.id);
         const db = mongodb.getDatabase();
@@ -61,6 +65,7 @@ const updateCalling = async (req, res) => {
 
         // Validate required fields
         if (!calling.Name) {
+            //#swagger.tags=['Calling']
             return res.status(400).json({ error: 'Missing required fields' });
         }
 
@@ -80,6 +85,7 @@ const updateCalling = async (req, res) => {
 };
 
 const deleteCalling = async (req, res) => {
+    //#swagger.tags=['Calling']
     try {
         console.log(`Received request to delete calling with ID: ${req.params.id}`);
         const callingId = new ObjectId(req.params.id);
